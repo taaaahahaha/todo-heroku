@@ -29,7 +29,8 @@ def hello_world():
                         {
                             "_id":count+1,
                             "title":title,
-                            "desc":desc
+                            "desc":desc,
+                            "date_created":datetime.utcnow()
                         }
                     )
                 
