@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\taaha\OneDrive\Desktop\Coding\Flask-Prac\env"
+set "VIRTUAL_ENV=C:\Users\taaha\OneDrive\Desktop\Ongoing\todo-heroku\env"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"

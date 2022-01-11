@@ -21,7 +21,7 @@ def hello_world():
         title = request.form['title']
         desc = request.form['desc']
 
-        count = collection.count()
+        count = collection.count_documents({})
 
         while True:
             try:
@@ -40,7 +40,7 @@ def hello_world():
         
         
     data_obj = collection.find({})
-    return render_template('index.html', allTodo=data_obj, len=collection.count())
+    return render_template('index.html', allTodo=data_obj, len=collection.count_documents({}))
 
 @app.route('/update/<int:sno>', methods=['GET', 'POST'])
 def update(sno):
@@ -57,7 +57,6 @@ def update(sno):
 @app.route('/delete/<int:sno>')
 def delete(sno):
     
-    print(type(sno))
     collection.delete_one({"_id":sno})
 
     return redirect("/")
