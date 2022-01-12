@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Signin
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="container my-3">
+
+
+    {% with messages = get_flashed_messages() %}  
+    {% if messages %}  
+        {% for message in messages %}  
+            <p>{{ message }}</p>  
+        {% endfor %}  
+    {% endif %}  
+    {% endwith %}  
+
+</div>
+
+
+<div class="container my-3">
+    <h2>Sign in</h2>
+    <form action="/" method="POST">
+    
+        <div class="mb-3">
+            <label for="username" class="form-label">User name</label>
+            <input type="username" class="form-control" name="username" id="username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password">
+        </div>
+        <button type="submit" class="btn btn-dark"> Sign in </button>
+    </form>
+</div>
+
+
+
+<div class="container my-3">
+    <h3>New User?</h3>
+
+    <form action="/signup" method="GET">
+        <button type="submit" class="btn btn-dark my-2"> Sign Up </button>
+    </form>
+        
+</div>
+
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+
+
+{% endblock body %}
